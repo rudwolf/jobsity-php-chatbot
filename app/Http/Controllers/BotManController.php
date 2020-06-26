@@ -127,6 +127,19 @@ class BotManController extends Controller
         }
     }
 
+    public function balance(BotMan $bot)
+    {
+        $email = Auth::user()->email;
+        $account = Account::firstOrCreate(['email' => $email]);
+        if (isset($account->currency) && !is_null($account->currency)) {
+            $bot->reply("Your balance is $account->balance $account->currency");
+            return;
+        } else {
+            $bot->reply('There was an error, you need to set your account currency first! To do it type "my currency is CURRENCY" without quotes, where CURRENCY is any valid currency like USD, CAD or EUR.');
+            return;
+        }
+    }
+
     public function log($email, $message) {
         $log = new AccountLog;
         $log->email = $email;

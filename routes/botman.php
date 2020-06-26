@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\BotManController;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 $botman = resolve('botman');
 
@@ -18,7 +18,7 @@ if (Cookie::has('login_hash')) {
     $botman->hears('balance', BotManController::class.'@balance');
 } else {
     $botman->hears('.*(convert|deposit|withdraw|balance).*', function ($bot) {
-        $bot->reply('You need to access your account first, please type "bank" (whithout quotes please) to start banking');
+        $bot->reply('You need to access your account first, please <a href="'.url('/login').'">click here</a>');
     });
 }
 
