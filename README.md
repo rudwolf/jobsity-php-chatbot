@@ -18,4 +18,10 @@ This service uses AMDOREN API, to get a key go to https://www.amdoren.com/develo
 
     AMDO_KEY="KEY SECRET GOES HERE"
 
-type 'bank' on the chat to start using it.
+After all is set up and app is open on the browser type 'bank' on the chat to start using it. The app will allow new users to register and create an account, after login you will be able to use all the bank operations.
+
+## Bonus Feature Accomplished
+
+- Handle currency code validation in the cache.
+
+I've done this feature using the Account Model, it keeps a list of valid currencies so app doesn't needs to send requests to the API if the currency is invalid.
