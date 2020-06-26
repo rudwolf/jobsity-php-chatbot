@@ -1,0 +1,36 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ChatLog {
+  max-height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 0;
+  &__entry {
+    margin: 2.5rem 0;
+  }
+}
+
+.ChatLog_wrapper {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ChatLog_controls input.ChatInput {
+  margin-top: 1rem;
+  padding: 1rem .8rem;
+  width: 310px;
+}
